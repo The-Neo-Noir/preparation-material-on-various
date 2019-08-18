@@ -1,0 +1,307 @@
+aws : 
+	> history : 
+		> 2003, 2004 lunched with sqs
+		> 2017 AI and virtual reality
+		> More than 1300+ servcies 
+		> AWS is in the leader , microsoft azure is close by 
+
+	> High level view 
+		> 22 regions : Region is geographical areas where the aws presence is 
+		> 61 availablity zone : aZ is how many data centers they have in each region, typically more than 2 for redundancy
+		Edge locations are for caching contents typically CDN and cloudfront , more edge locations than regions
+
+	Compute: 
+		EC2: Elastic Cloud compute
+			> virtual machine
+		EC2 container service: For containers like docker 
+		Elastic Beanstack: 
+		Lambda: 
+		Lightsail: 
+			VPS : rdp  or ssh for linux
+		Batch: 
+
+	Storage : 
+		S3: simple storage service 
+			> object based, buckets
+		EFS: Elastic file system
+			> network file stoage, netwoek attachked,can be attached to multiple vms
+		Glacier : archieve data, less frequently access data , cheap
+		Snowball: a harddisk kind of device which lets you store your data and send them to the aws to store in in the cloud
+		Storage gateway: 
+
+	Databases: 
+		rds: relational database service
+			> mysql, oracle, postgres
+		dynamoDB: no sql database
+
+		elasticache: a caching server 
+		redshift : complex queries, build for dataware housing 
+
+	Migration servcie: 
+		AWS Migration Hub: 	
+		Application discovery service: 	depenendy
+		Database Migration service :
+		Service Migration service :
+		snowball
+	networking and content delivery: 
+		VPC : 
+		cloudfront: media assest , content delivery netowkr and stores in edge 
+		Route53: DNS server, domain name 
+		api gateway : 
+		Direct connect: directly connect 
+	Developer tools : 
+		> Code star: Project managment code , CD toolchain and collaboration 
+		> Code commit : a source contorl and private git repo 
+		> Code build: compile , run test and pacakge 
+		> code deploy : 
+		> Code pipeline : 
+		> X-ray : tracing , and debbuging 
+		> cloud 9 : IDE 
+
+
+
+
+
+
+Managment tools: 
+	CloudWatch : 
+
+	Cloudformation: A scripting infrastrcutre . crate templates infrastructre 
+
+	Cloud trail: keeps all the logs of the changes to the aws environment 
+
+	Config: monitors visualize
+
+	opsworks: shift and puppet 
+
+	Service cataglog : 
+
+	Systems manager: 
+
+	trusted advisor: 
+
+	Managed services : 
+
+Media services: 
+	Elastic transcoder : resize , 
+	Media Live : live video processing to broadcast 
+	media convert : 
+	media store   : storage service for media 
+	media package : protects 
+	Media tailer : allows advertizing 
+
+machine leaner : 
+	sagemaker : 
+	comprehend : sentiment analysis 
+	Deeplens   : a hardware , 
+	lex : alexa , artificial intelligent 
+	machine leanring : also recommeds products  ( interesting )
+	deep learning : nueral , more intellignet  
+	Polly : takes text and speech convertion  ( interesting )
+	rekognition: picture to analysis  ( interesting )
+	amazon translate : machien transalte to other language 
+	transcribe : automatic speech recognizion and turn into text. 
+
+analytics : 
+		Athena : sql query on s3 bucket 
+		emr : elastic map reduce , large amount of data for big data. 
+		cloud seach: 
+		elastic search searvice : 
+		kinesis : ingesting large amount of data, 
+		kinesis video stream : 
+		quicksight : business intelligent 
+		data pipleline : 
+		glue : etl 
+
+
+
+Security : 
+ 	IAM 
+ 	Cognito : device authentication , 
+ 	Guard Dyuty
+ 	ispector : 
+ 	macie : scan s3 bucket , PII : personal identify 
+ 	Certificate manager : manage all your ssls
+ 	cloudHSM: 
+ 	Directory service: active directory services , 
+ 	WAF : web application firewall, xss,sql injection 
+ 	Shield: DDOS attacks prevented
+ 	artifact : 
+
+ Mobile services : 
+ 	> mobile hub : managment console , 
+ 	> pinpoint : targeted push notification ( interesting )
+ 	> aws appsync: web and mobile app and offline 
+ 	> Device Farm: android and ios devices real testing
+ 	> mobile analytics : 
+
+ Application integration: 
+ 	> amazon mq 
+ 	> SNS : notification service , as soon as bill goes above , it sends notification
+ 	> SQS : decoupling , 
+ 	> SWF : Workflow service
+
+ Customer engagement : 
+ 	> Connect 
+ 	>  Simple Email service 
+
+ Business productivity : 
+ 	> Alexa busniess : Brand new service
+	> Chime : Like google hang out
+	> Work Docs: Dropbox like 
+	> Work mail : like office 365 
+
+Desktop and app steram : 
+	 > workspace 
+	 > AppStream 2: 
+IOT: 
+	> iot Device managment : 
+	> rtos : 
+	> greengrass : 
+
+
+
+
+
+
+
+
+
+
+
+
+IAM : 
+	> They are global , no region specific	
+
+S3: Simple stroage service
+	> doesn't require you to be any specific region, but buckets are 
+	> 0 to 5TB 
+	> pay by the gigs
+	> unlimited stroage
+	> buckets
+		> By default they are private 
+		> object based storage, not suitable for intalating software 
+		>universal namespace globally unique
+		> bucket url
+			https://s3-region.amazonaws.com/bucketname
+			http upload 200 ok
+		Data consistency model
+			> read after write for newly created objects.
+			> evantual consistency for overwrites puts and deletes ( update and deletes )
+		Key-value store 
+			> key : name of the object
+			> value : sequency of the bits of the file
+			> versionID; for version
+			> MetaData: about data 
+			> subresources: 
+				Access control list : invididual persmission of the files
+			> torrent
+		Guarenty: 
+			> 99.99% availalbe
+			> 99.99999999 ( 11 9) durability
+			> Tiered/classes 
+				> S3 Standard ( 99.99 available and 99.999999999 durable), expect this every class has retrieval fee
+				> S3-IA : infrequently accessed 
+				> S3 one zone -IA : lower cost than S3-IA , only one zone 
+				> Glacier: archival only , lower cost , higher access time
+				  > NO Availability SLA guarenty
+					> Expedite : higher fee
+					> Standard : standard takes 3-5 hours to 
+					> bulk 	   :  
+
+			> Lifecycle magt: move to another storage
+			> version 
+			> encryption:
+			> secure your data 
+				>ACL and Bucket policies
+		S3- Charges
+			> storage ( capacity )
+			> requests
+			> Storage managments
+				metadata
+			> Data transfer prince 
+				cross region replication
+			> transfer acceleration 
+				> Uses 
+
+ read s3 faq
+ 	> individual objects don't inherit the buckets tags
+ 	> Client side encryption and service side encryption , only at the rest 
+ 	> Bucket acl or bucket policy 
+
+ Versioning: 
+ 	> Once versioning is enabled , you can't disable it , only suspend it.
+ 	> Large files once versioned will keep the same file as many vresion times
+ 	> Protect people from accidentally deleting
+ 		> USe MFA 
+ Cross region replication: 
+ 	> YOu can replicate a bucket in another region, remember versioning is required.
+ 	> The existing objects will not be replicated, only the new ones will be 
+
+
+ What does RRS stand for when talking about S3? 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

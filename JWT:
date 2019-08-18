@@ -1,0 +1,21 @@
+JWT: 
+ Three sections: three parts
+ 	> header.payload.signature
+ 	> base64 encoded 
+ 		> Header: 
+ 			> typ: "JWT"
+ 			> alg:
+ 		> payload: aka claims
+ 			> key and value pair 
+ 			iss: issuer
+ 			sub: 
+ 		> signature: 
+ 			s=hashalgo(base64encode(header)+"."+base64encoder(payload))
+ 			signature=algo(s,secre);
+ 			jwt=s+"."+base64(sign)
+
+ 			auth
+ Client ---------->server ( security check and then create token)
+ verify<---------jwt
+ extract
+ persist

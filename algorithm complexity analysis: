@@ -1,0 +1,80 @@
+algorithm complexity analysis: 
+	Why complexity analysis is required: 
+	  Time based analysis is not sufficient
+		> Low level language will perform better than high level language
+		> Counting number of instructions are tedious, and at times not even accurate, varies
+		from language to language. Array access may be 3 instrunction in pascal but 1 in C.
+
+
+Anki: Can you do analysis on how many instrcutions will the following perform ? 
+	var M = A[ 0 ]; 
+	for ( var i = 0; i < n; ++i ) {
+			if ( A[ i ] >= M ) {
+			M = A[ i ];
+		}
+	}
+
+	answer: 
+		var M = A[ 0 ];  // One for look up , one for assignment : 2
+		for(var i=0;i<n;i++)  
+			// one for assignment, and one for check : 2 , Even if the number n is 0;
+			so this far we have 4 instructions
+			// and after the body execution, the i<n and i++ check which is two instrcution, now 
+			basing on n, if the n is 1, but if n is two then i<n and i++ will execute 4 time, thus
+			it is 2n times 
+		// now so far excluding the body it executes 4+2n times
+
+		now lets talk about the body;
+			if(A[i]>=M) is one look up and one check , thus 2 
+			m=a[i] is one look up and one assignment , thus 2 
+			so total is 4, and for each n, thus 4n 
+		now this far 4+2n+4n = 4+6n, but this is the worst case. that is if the array is in ascending order. 
+		but of descending order , it is going to be 4+2n+2n=4+4n
+
+A: f( n ) = 5n + 12
+	f(n)=n
+A: f(n)=120
+	f(n)= 1
+A: f( n ) = n^2 + 3n + 112 gives f( n ) = n^2
+
+Here, n2 grows larger than 3n for sufficiently large n, so we're keeping that.
+
+A: f( n ) = n^3 + 1999n + 1337 gives f( n ) = n3
+A: f( n ) = n + sqrt( n ) gives f( n ) = n
+
+f( n ) = n6 + 3n  ?  n
+f( n ) = 2n + 12
+f( n ) = 3n + 2n
+f( n ) = nn + n
+
+> If a program has no loops , then it is done in f(n)=1
+> A single loop over n items yields f( n ) = n
+> A loop within a loop yields f( n ) = n2
+> A loop within a loop within a loop yields f( n ) = n3.
+
+> int i;
+for ( i = 0; i < n; ++i ) {
+f( n );
+}
+If we know that f( n ) is a function that performs exactly n instructions, we can then know that the number of instructions of the whole program is asymptotically n2, as the function is called exactly n times.
+
+> Two nested loops followed by a single loop is asymptotically the same as the nested loops alone, because the nested loops dominate the simple loop.  { Give an example} 
+
+> n6 + 3n ∈ Θ( n6 )
+2n + 12 ∈ Θ( 2n )
+3n + 2n ∈ Θ( 3n )
+nn + n ∈ Θ( nn )
+
+We say that a 
+Θ( 1 ) algorithm is a constant-time algorithm,
+ Θ( n ) is linear,
+  Θ( n2 ) is quadratic and
+   Θ( log( n ) ) is logarithmic 
+
+
+Worst , best and average cases
+	> For a given problem set , the solution can be in worst , best and average case. 	
+		> For sorting an array in descending order the worst case is when the input are already in acending order.
+		 > 
+
+

@@ -1,0 +1,12 @@
+anki: 
+is bubble sort stable? YEs 
+
+
+SEARCHING: 
+	symbol tables are also called dictionary or indices
+	Few symbol table implementations 
+		> binary search tree
+		> red-black tree 
+		> hash table. 
+	Why its a good idea to have the keys in symbol table to be immutable ? 
+	

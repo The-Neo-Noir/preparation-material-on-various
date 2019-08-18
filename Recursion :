@@ -1,0 +1,43 @@
+Recursion : 
+	Fundamentally recursive: 
+		> examples 
+	    > It can be implemented using a stack , without even recursive cllas
+	    ,but may be little more troubelesome than worth
+
+
+	Base case 
+	Recursive Case
+
+	What is tail recursion : 
+
+
+ 111
+1000
+0000
+
+double basePrice = _quantity * _itemPrice;
+if (basePrice > 1000)
+return basePrice * 0.95;
+else
+return basePrice * 0.98;
+
+
+if ( (platform.toUpperCase().indexOf("MAC") > -1) &&
+(browser.toUpperCase().indexOf("IE") > -1) &&
+wasInitialized() && resize > 0 )
+{
+// do something
+}
+
+final boolean isMacOs = platform.toUpperCase().indexOf("MAC") >
+-1;
+final boolean isIEBrowser = browser.toUpperCase().indexOf("IE") >
+-1;
+final boolean wasResized = resize > 0;
+if (isMacOs && isIEBrowser && wasInitialized() && wasResized) {
+// do something
+}
+
+Question for recursion: 
+https://app.codesignal.com/arcade/intro/level-3/9DgaPsE2a7M6M2Hu6
+	
