@@ -1,0 +1,197 @@
+	preparation of sage: 
+		identity equals 
+
+	how to override the equals the correct way ? 
+		> public boolean equals(Object o){
+			if(o isntanceof Type){
+				Cast
+				return this.field==cast.field
+						this.StringField.equals(cast.StringFriend)
+
+			}
+			return false;
+		}
+
+7974720134
+
+THEADS: 
+
+What is lost update ? 
+
+Deadlock, livelock , race condition and starvation ?
+
+Intrincic lock are called also monitor lock aka mutexes.
+
+How atomic integer achieves thread safety ?
+	> It uses native methods indirectly calls native methods.
+
+What is the use of countdownlatch ? 
+	https://stackoverflow.com/questions/17827022/how-is-countdownlatch-used-in-java-multithreading
+
+How do you test your thread based programms ? 
+	
+What is the differnece between intrincic lock for explicit private lock ? 
+There are advantages to using a private lock object instead of an object's intrinsic lock (or any other publicly accessible
+lock). Making the lock object private encapsulates the lock so that client code cannot acquire it, whereas a publicly
+accessible lock allows client code to participate in its synchronization policy Ͳ correctly or incorrectly. Clients that
+improperly acquire another object's lock could cause liveness problems, and verifying that a publicly accessible lock is
+properly used requires examining the entire program rather than a single class.
+
+
+Mutexes are mutual 	exlusion locks , one and only one can own it .
+
+Java intrinsic lock is both mutext ( mutually exclusive locks ) and reentrant ? 
+   > When mutex it means only one thread can hold the lock , and by reentrant , it means, it a thread has a lock already 
+     and its requesting the lock again he would have the access.
+     
+
+
+
+	What is the difference between having the .class vs instance of in equals ? 
+
+	Guard cluse ?
+
+	architectureal pattern vs design pattern ? 
+
+	StringBuffer is thread safe but StringBuilder is not 
+
+
+	composed method pattern ? 
+
+	primitive obsession 
+
+	Feature envy 
+
+	mocks , stubs and ..... ? ?? 
+
+	refused  request smell  ? 	
+
+
+	properties inheritance in java ???
+
+	Rules for overriding and overloading ??
+
+	what is jva 5 covariant return types ?
+
+	when is static block, static variable , instance variable and instnace block gets executed ? 
+
+	get more somethign similar to https://www.youtube.com/watch?v=IjjDkAGtszg 
+
+	value passing to a method , with super and one sub, while calling going to call the sub. but if the differnciation can' be made
+	its going to be a compiler error 
+
+	adding two characters will return the asci values addition of the corresponding values/
+
+	Learning : If you contruct an object with  a parameter as null and your object behaves fine for some cases, it might 
+	already be violating the SRP. 
+
+	HOw to deal with equals being subclassed ? 
+		YOu can make it final 
+
+	TDD: What is triangulation ? 
+
+
+	Unit Testing compared to Functional Testing: http://link.jbrains.ca/1IbCuoh
+
+	Why write a test just to see it fail? http://link.jbrains.ca/1IbBMav
+
+	Should I test my Javascript function with parameters of obviously the wrong type"  http://www.quora.com/Should-I-test-my-JavaScript-by-calling-the-methods-using-parameters-of-the-wrong-type
+
+	What is a text fixture ? 
+		a Test fixture is something that makes the  code much more cleaner , by moving those objects to the @Before methodl. .
+
+	Learning in TDD or object  oriented programming : abstraction in code and details in data 
+
+	What is a bouncer pattern ? Dn't go defensive too much , have a bouncer at the door which keeps the so the data is sanitized 
+	and the possibleity of having nulls reduces to almost nothing 
+
+	Why cloning is not advisable ? 
+
+	What is shallow copy vs deep copy ? 
+
+
+
+
+
+THREADS: 
+	what is the default priority in thread ? 
+	 NORM_PRIORITY=5
+
+	 Thread states ?
+	 	what situation does thread goes from running to runnable state ? 
+	 	What situation puts the threads to waiting / blocking state? 
+	 		> Thread is waiting for join 
+	 		> waiting for the resource to be available ? like what ? 
+	 		> 
+
+	 	Can ever a thread state transition from waiting to blocking state ? 
+
+
+
+
+
+
+Hashmap with sting literal and new string as key what will be the size?  
+
+
+Finalize method, daemon thread?  
+
+
+
+Executor framework, Concurrent hashmap?  
+
+
+Diff bw fixedthreadpool vs cached  
+
+rrayblockingqueue vs linked blockingqueue, countdownlatch, cyclic barrier.
+
+
+
+AGILE: 
+	http://www.agilenutshell.com/estimation	
+
+
+
+
+SQL 
+===============
+
+Where to keep the foreign key in database tables for one-to-many relation ? 
+	> It usually applies in a one-to-many relationship
+	> Given two entities, find out the one to many relationship
+		> Customer can place multiple order ( one customers many orders)
+		> Create the foreign key on the many side refernecing to the primary key on the one side entity.
+
+When does one-to-one table relation matters ? as the data could have kept in one table ? 
+	> A chunk of optional attributes that may be associated with a primary entity, which makes it a 1:[0-1] relationship. This may also be used to represent fields of a subclass when performing object/relational mapping.
+	
+	>A performance denormalization, when done as part of physical design. If the additional attributes are rarely needed, they can be shunted off into a separate table that can be joined in if needed. However, this technique is likely not needed if your database can optimize using a covering index or a materialized view to create a physical representation of the frequently-accessed subset of the data.
+
+	> Your schema changes often, and the application can customise the attributes of an object
+	
+	>Performance isn't a concern and you are using views to create data layouts for abstract backend attribute storage
+
+	read more : https://stackoverflow.com/questions/3939589/database-design-should-one-to-one-relationships-be-avoided
+
+How do you differencite between one-to-one and one-to-many foreign key ? 
+	make foreign key unique in the many side to make it one-to-one , 
+	Abhiram : can you read this and undersatnd : https://stackoverflow.com/questions/13644979/mysql-one-to-one-relation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	how to do the hashCode right ? 	
